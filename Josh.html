@@ -1,0 +1,141 @@
+<html>
+	<head>
+	<style>
+	body{
+	font-family:Trebuchet MS;
+	background-image: url("circle.jpg");
+	background-size:auto;
+	}
+	table#courses {
+		width:100%;
+		border: 1px solid black;
+		border-collapse: collapse;
+		}
+		
+		td, tr{
+		border: 1px solid black;
+		}
+		
+	table#tab, td#big{
+	width:100%;
+	border: 0px;
+	}
+	h2{
+	color: #a8c2ed;
+	background-color: #6c7c96;
+	}
+
+	p{
+	color: #0a295b;
+	}
+	
+	<!--Using a style section I am able to style many parts of the website easily, 
+	and without cluttering my code. I was able to add backgrounds, and style the tables
+	with ease, this makes the website look great. This could also be done in a seperate CSS
+	file, but I much preferred having them in the same file so it was easier for me to work.-->
+	</style>
+	
+	
+		<meta charset="utf-8">
+		<title>Josh Flemming</title>
+		<!--The title adds a title to the webpage, shown on the tab on google chrome. -->
+		<script>
+		function submit()
+		{
+		var input1 = document.getElementById('input1').value;
+		var input2 = document.getElementById('input2').value;
+		
+		alert("Hello, " + input1 + ", your email is : >" + input2 + ", thanks for subscribing!");
+		}
+		
+		</script>
+		<!--The java script above is a function used to show an alert, using the 
+		inputs from the two text boxes. Java script is only wiritten in the
+		script section, and cannot be read anywhere else.-->
+		
+
+	</head>
+	<body>
+	
+		<table id="tab">
+		<td id="big">
+		<!--created a table to allow for a picture to be placed to the right of
+		the rest of the body, the first column is all of the text, while the second column
+		is just a stylish picture of me. -->
+		<h1>Josh</h1>
+		<h2>About</h2>
+		<!-- h1 and h2 are two headers with different formats, h1 is used for the first
+		title and h2 is used as a section title (smaller) -->
+		<p>Bla bla!</p>
+		<p>Hi, I'm Josh. I love <a href="https://www.linkedin.com/in/gunho-sohn-4176846/"> Professor Gunho</a>.</p>
+		<!-- p allows for text to be shown in paragraph, and a link is displayed
+		to show my understanding of in text links-->
+		
+		<h2>Courses</h2>
+		<p>Here are some courses I've taken:</p>
+		<!-- a second table is created to show some courses I've taken, and different rows
+		have differently coloured backgrounds to enhance readbility.-->
+		<table id="courses">
+			<tr style="background-color:white">
+				<th>Course Number</th>
+				<th>Course Title</th>
+				<th>Semester Taken</th>
+			</tr>
+			<tr style="background-color:white">
+				<th></th>
+				<th>For Credit</th>
+				<th></th>
+			</tr>
+			<tr style="background-color:#f2f6fc">
+				<td>ESSE 3600</td>
+				<td>Geographical Information Systems</td>
+				<td>Fall 2018</td>
+			</tr>
+			<tr style="background-color:#eaebed">
+				<td>ESSE 3610</td>
+				<td>Geodetic Concepts</td>
+				<td>Fall 2018</td>
+			</tr>
+			<tr style="background-color:#f2f6fc">
+				<td>ESSE 4020</td>
+				<td>Time Series and Spectral Analysis</td>
+				<td>Fall 2018</td>
+			</tr>
+			
+			
+			<tr style="background-color:#eaebed">
+				<td>ESSE 3020</td>
+				<td>Global Geophysics and Geodesy</td>
+				<td>Winter 2018</td>
+			</tr>
+			<tr style="background-color:#f2f6fc">
+				<td>ESSE 3620</td>
+				<td>Adjustment Calculus</td>
+				<td>Winter 2018</td>
+			</tr>
+			
+		</table>
+		
+		<h2>Interests</h2>
+			<p>I am interested computers, geomatics and <strong>Coffee</strong>.<p>
+			
+		<h2>Subscribe to me newsletter!</h2>
+			<p>To receive informational newsletter, Submit below!</p>
+			<br/>
+			<p>Name: <input type="text" id="input1" > </p>
+			<p>Email: <input type="text" id="input2" > </p>
+			<button type="button" onclick="submit()">Submit</button>
+			
+			<!-- Two text input boxes are made, with different IDs, these boxes
+			are read when the Submit button is pressed. The button runs a function using 
+			the variables from the input boxes showing an alert that says you've subscribed
+			to the newsletter.-->
+			
+			</td>
+			
+			<td id="big">
+			<img src="coffeejosh.jpg" alt="Joshua" width="360" height="360">
+			</td>
+			</table>
+		<!-- the image is added to the second column of the table.-->
+</html>

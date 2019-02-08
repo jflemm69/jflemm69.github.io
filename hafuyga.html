@@ -1,0 +1,39 @@
+<html> 
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"> 
+	<title>Javapp</title>
+	
+	<script src="https://js.arcgis.com/3.27/"></script>
+	<link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css"> 
+	
+	<script>
+		var map; 
+		require(["esri/map","dojo/domReady!"], function(Map){ 
+			map = new Map("map", { 
+				basemap: "topo", 
+				center: [-79.5040571, 43.7734535], 
+				zoom: 15 
+			}); 
+		});
+	</script>
+
+	<style> 
+		html, body, #map { 
+			height: 100%; 
+			padding: 0; 
+			margin: 0; 
+		}
+	</style>
+	
+	
+</head> 
+
+<body class="claro"> 
+	<div id="map"></div> 
+</body>
+
+
+
+
+</html>

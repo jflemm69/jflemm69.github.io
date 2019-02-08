@@ -1,0 +1,124 @@
+<html>
+	<head>
+		<title>HELLO</title>
+		
+		<script>
+		
+		var x = 1;
+		var y = 2;
+		var z = 69;
+		
+		
+		function changeText()
+		{
+		//document.getElementById('demo').innerHTML = 'hello java';
+		
+		var name = document.getElementById('TextBox').value;
+		document.getElementById('demo').innerHTML = 'hello ' + name + "!";
+		}
+		
+		function add()
+		{
+		var input1 = document.getElementById('input1').value;
+		var input2 = document.getElementById('input2').value;
+		input1 = parseFloat(input1);
+		input2 = parseFloat(input2);
+		var ans = input1 + input2;
+		document.getElementById('answer').innerHTML = "Answer: " + ans;
+		}
+		function subtract()
+		{
+		var input1 = document.getElementById('input1').value;
+		var input2 = document.getElementById('input2').value;
+		input1 = parseFloat(input1);
+		input2 = parseFloat(input2);
+		var ans = input1 - input2;
+		document.getElementById('answer').innerHTML = "Answer: " + ans;
+		}
+		function multiply()
+		{
+		var input1 = document.getElementById('input1').value;
+		var input2 = document.getElementById('input2').value;
+		input1 = parseFloat(input1);
+		input2 = parseFloat(input2);
+		var ans = input1 * input2;
+		document.getElementById('answer').innerHTML = "Answer: " + ans;
+		}
+		function divide()
+		{
+		var input1 = document.getElementById('input1').value;
+		var input2 = document.getElementById('input2').value;
+		input1 = parseFloat(input1);
+		input2 = parseFloat(input2);
+		var ans = input1 / input2;
+		document.getElementById('answer').innerHTML = "Answer: " + ans;
+		}
+		
+		function Verify()
+		{
+			var Check = document.getElementById('robot').checked;
+
+			if (Check == true)
+			{
+				alert('You robot');
+			}
+			else
+			{
+				alert('Hello Human');
+			}
+		}
+		
+		
+
+		
+		function printTriangle()
+		{
+			var VALUE = document.getElementById('triangle').value;
+			VALUE = parseInt(VALUE);
+			
+			var i = 0;
+			for (i=0;i<VALUE;i++)
+			{
+				document.getElementById('result').innerHTML += "<br/>" + "*";
+			}
+		
+		}
+		
+		
+		</script>
+		
+	</head>
+	<body>
+	<h2>H2 idk</h2>
+	
+	<p id="demo"> Javascrip can do stuff</p>
+	<!--
+	<input type="text" id="TextBox" >
+	
+	<button type="button" onclick="changeText()">BUTTON</button>
+	/-->
+	
+	<br/>
+	<input type="text" id="input1" >
+	<input type="text" id="input2" >
+	
+	<button type="button" onclick="add()">+</button>
+	<button type="button" onclick="subtract()">-</button>
+	<button type="button" onclick="multiply()">*</button>
+	<button type="button" onclick="divide()">/</button>
+
+	<p id="answer">Answer: </p>
+	
+	<br/>
+	
+	<p> <input type="checkbox" id="robot"/> Are you a robot </p>
+	<button type="button" onclick="Verify()">Verify</button>
+	
+	<br/>
+	<input type="text" id="triangle"/>
+	<button type="button" onclick="printTriangle()">Print</button>
+	<p id="result"></p>
+	
+	</body>
+
+</html>

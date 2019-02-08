@@ -1,0 +1,186 @@
+<html>
+	<head>
+	<style>
+	body{
+	font-family:Trebuchet MS;
+	background-image: url("paper-textures-crumpled-backgrounds-wallpapers.jpg");
+	background-size:auto;
+	}
+	table#courses {
+		width:100%;
+		border: 1px solid black;
+		border-collapse: collapse;
+		background-color:white;
+		}
+		
+		td, tr{
+		border: 1px solid black;
+		}
+		
+	table#tab, td#big{
+	width:100%;
+	border: 0px;
+	}
+	
+	h1#name{
+	font-size:250%;
+	font-family:Comic Sans MS;
+	color:#35608B;
+	text-align:left;
+	}
+	
+	h1#info{
+	font-size:100%;
+	font-family:Comic Sans MS;
+	color:#5B85AF;
+	text-align:left;
+	}
+	
+	h2{
+	background-color:#BFD8F2;
+	}
+		<!--Using a style section I am able to style many parts of the website easily, 
+	and without cluttering my code. I was able to add backgrounds, and style the tables
+	with ease, this makes the website look great. This could also be done in a seperate CSS
+	file, but I much preferred having them in the same file so it was easier for me to work.-->
+	</style>
+	
+		<title>Joshua Flemming Resume</title>
+		<!-- the title allows me to name the webpage, shown on the tab in Chrome-->
+		<script>
+		function submit()
+		{
+		var input1 = document.getElementById('input1').value;
+		var input2 = document.getElementById('input2').value;
+		var input3 = document.getElementById('input3').value;
+		
+		alert("Hello, " + input1 + ", your email is : " + input2 + ", your message:  " + input3 + "  has been sent");
+		}
+		
+		</script>
+		<!-- Java script can be written in HTML code as long as it is in the 
+		script section, this way it can be read as code and run normally. This script is
+		a short function that takes inputs from three text boxes, and displays an alert on
+		the internet browser using the inputs.-->
+		
+	</head>
+	<body>
+		<!-- a table is created to seperate my name/personal info and the picture, the table
+		allows me to put them side by side-->
+		<table id="tab">
+		<td id="big">
+		
+		<h1 id="name">Joshua Flemming</h1>
+		<h1 id="info">(705) 344 4112
+		<br/>joshtflemming@gmail.com 
+		</h1>
+		<!-- using id="" I am able to select the styles that i would like to be on certain lines,
+		the styles are first made in the style section and referenced when I created these headers 
+		and tables-->
+
+			</td>
+			
+			<td id="big">
+			<img src="josh.jpg" alt="Joshua" width="300" height="300">
+			</td>
+			</table>
+			
+			<h2>About Me</h2>
+		
+		<p>Third year Geomatics Engineering student at York University, looking to find a postion in the field of Geomatics for a summer job.</p>
+		
+		<h2>Experience</h2>
+		<p>The table below contains my most recent work experience:</p>
+		
+		<!-- a new table is created to hold my work experience, alternating row colours to
+		enhance the readability of the chart.-->
+		<table id="courses">
+			<tr>
+				<th>Position</th>
+				<th>Company</th>
+				<th>Date</th>
+			</tr>
+
+			<tr style="background-color:#f2f6fc">
+				<td>Survey Assistant</td>
+				<td>C.T. Strongman Surveying</td>
+				<td>Summer 2018</td>
+			</tr>
+			<tr style="background-color:#eaebed">
+				<td>Survey Assistant</td>
+				<td>C.T. Strongman Surveying</td>
+				<td>Summer 2017</td>
+			</tr>
+			<tr style="background-color:#f2f6fc">
+				<td>Survey Assistant</td>
+				<td>C.T. Strongman Surveying</td>
+				<td>Summer 2016</td>
+			</tr>
+			
+		</table>
+		
+				<h2>Relevant Courses</h2>
+		<p>
+		The table below shows some relevant courses that I have excelled 
+		in at York University that may be relevant to potential jobs/employers:
+		</p>
+		<!-- another table nearly the same as the last one, showing courses that I have taken
+		that would be relevant to any prospective job oppurtunities-->
+		<table id="courses">
+			<tr>
+				<th>Course Number</th>
+				<th>Course Title</th>
+				<th>Semester Taken</th>
+			</tr>
+
+			<tr style="background-color:#f2f6fc">
+				<td>ESSE 3600</td>
+				<td>Geographical Information Systems</td>
+				<td>Fall 2018</td>
+			</tr>
+			<tr style="background-color:#eaebed">
+				<td>ESSE 3610</td>
+				<td>Geodetic Concepts</td>
+				<td>Fall 2018</td>
+			</tr>
+			<tr style="background-color:#f2f6fc">
+				<td>ESSE 4020</td>
+				<td>Time Series and Spectral Analysis</td>
+				<td>Fall 2018</td>
+			</tr>
+			
+			
+			<tr style="background-color:#eaebed">
+				<td>ESSE 3020</td>
+				<td>Global Geophysics and Geodesy</td>
+				<td>Winter 2018</td>
+			</tr>
+			<tr style="background-color:#f2f6fc">
+				<td>ESSE 3620</td>
+				<td>Adjustment Calculus</td>
+				<td>Winter 2018</td>
+			</tr>
+			
+			
+		</table>
+		
+		
+		
+		<h2>References</h2>
+			<p>If a character reference is needed, call this guy
+			<br/>
+			Derek Abernethy -> (705) 321 4358<p>
+			
+		<h2>Contact</h2>
+			<p>To send me an email, fill out the form below:</p>
+			<p>Name: <input type="text" id="input1" > </p>
+			<p>Email: <input type="text" id="input2" > </p>
+			<p>Message: <input type="text" id="input3" > </p>
+			<button type="button" onclick="submit()">Submit</button>
+		<!-- this contact section is mostly just for testing the input and button,
+		pressing the button takes inputs from each of the text boxes to show an alert saying
+		that a message has been sent.-->
+			
+			
+		
+</html>
