@@ -54,17 +54,21 @@
 
 <body class="tundra"> <!--Sets the theme of the body -->
 
-<div data-dojo-type="dijit/layout/BorderContainer" <!-- creates border container-->
+<div data-dojo-type="dijit/layout/BorderContainer" 
 	data-dojo-props="design:'headline', gutters:false" 
-	style="width:100%;height:100%;"> <!-- styles the directions widget -->
-	<div data-dojo-type="dijit/layout/ContentPane" <!--first content pane (search bar)-->
+	style="width:100%;height:100%;"> 
+	<!-- creates border container-->
+	<!-- styles the directions widget -->
+	
+	<!--first content pane (search bar)-->
+	<div data-dojo-type="dijit/layout/ContentPane" 
 		data-dojo-props="region:'right'" style="width:250px;"> 
 		
 		<div id="dir"></div> <!--new DOM element for the directions widget -->
 	</div> 
 	<div id="map" 
-	data-dojo-type="dijit/layout/ContentPane" <!--second content pane (directions)-->
-	data-dojo-props="region:'center'"> 
+	data-dojo-type="dijit/layout/ContentPane" 
+	data-dojo-props="region:'center'"> <!--second content pane (directions)-->
 </div> 
 </div>
 
