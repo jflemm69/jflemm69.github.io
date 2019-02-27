@@ -2,7 +2,10 @@
 <head> 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"> 
-	<title>Map</title> 
+	<title>Map</title> <!-- adds a title to the page -->
+	
+	<link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css"> 
+	<script src="https://js.arcgis.com/3.27/"></script> <!-- allows us to use ArcGIS API for JavaScript-->
 </head> 
 
 <style> 
@@ -11,32 +14,32 @@
 		padding: 0; 
 		margin: 0; 
 	} 
-</style>
+	<!--fills the browser's window with the map-->
 
-<link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css"> 
-<script src="https://js.arcgis.com/3.27/"></script>
+</style>
 
 <script>
 	var map; require(["esri/map", "dojo/domReady!"], function(Map) {
 		map = new Map("map", {
-			basemap: "topo",
+			basemap: "hybrid", //adds a basemap to the map, "hybrid" is the style of basemap from ArcGIS
 			center: [-79.4, 43.76], 
 			zoom: 13 
-		}); 
+		}); //Initializes the map and loads the modules to make the map work
+			
 			require([
 		"esri/map", 
 		"esri/dijit/Directions", 
 		"dojo/parser",
 		"dijit/layout/BorderContainer", 
 		"dijit/layout/ContentPane", 
-		"dojo/domReady!"
-	], function (Map, Directions, parser) {
+		"dojo/domReady!"				//these requirements are modules needed to run the directions widget
+	], function (Map, Directions, parser) { //start of the directions function
 	
-		var directions = new Directions({
+		var directions = new Directions({ //This is the directions widget
 		map: map, 
 	routeTaskUrl: "http://sampleserver3.arcgisonline.com/ArcGIS/rest/services/Network/USA/NAServer/Route", 
 		}, "dir");
-		directions.startup();
+		directions.startup(); //starts the directions widget
 		parser.parse();
 		});	
 		
@@ -49,20 +52,18 @@
 		
 </script>
 
-<body class="claro"> 
-<div id="dir"></div>
-<div id="map"></div> 
+<body class="tundra"> <!--Sets the theme of the body -->
 
-<div data-dojo-type="dijit/layout/BorderContainer" 
+<div data-dojo-type="dijit/layout/BorderContainer" <!-- creates border container-->
 	data-dojo-props="design:'headline', gutters:false" 
-	style="width:100%;height:100%;"> 
-	<div data-dojo-type="dijit/layout/ContentPane" 
+	style="width:100%;height:100%;"> <!-- styles the directions widget -->
+	<div data-dojo-type="dijit/layout/ContentPane" <!--first content pane (search bar)-->
 		data-dojo-props="region:'right'" style="width:250px;"> 
 		
-		<div id="dir"></div> 
+		<div id="dir"></div> <!--new DOM element for the directions widget -->
 	</div> 
 	<div id="map" 
-	data-dojo-type="dijit/layout/ContentPane" 
+	data-dojo-type="dijit/layout/ContentPane" <!--second content pane (directions)-->
 	data-dojo-props="region:'center'"> 
 </div> 
 </div>
