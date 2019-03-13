@@ -2,8 +2,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>ArcGIS DevLabs: JavaScript Starter App</title>
-  <style>
+  <title>ArcGIS DevLabs: JavaScript Starter App</title> <!--Sets the title of the webpage -->
+  <style> <!--Creates a number of different styles used when displaying: html, body, viewDiv, searchh, etc.-->
     html, body, #viewDiv {
       padding: 0;
       margin: 0;
@@ -44,7 +44,7 @@
   
   
   <link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
-  <script src="https://js.arcgis.com/4.10/"></script>
+  <script src="https://js.arcgis.com/4.10/"></script> <!--Uses the javascript ArcGIS API version4.10-->
   
   <script>
       
@@ -55,18 +55,18 @@
                "dojo/domReady!"
                //*** ADD ***// ], 
               ], function(Map, MapView, FeatureLayer) {
-      
+      //the require statement above loads a number of features needed to create the map and add feature layers
     
       var map = new Map({
         basemap: "topo-vector"
-      });
+      }); //adds a basemap to the webpage
       
       var view = new MapView({
         container: "viewDiv",
         map: map,
         center: [-118.71511,34.09042],
         zoom: 11
-      });
+      });//designs the view of the map shown when the page opens
 
         
       //*** ADD ***// 
@@ -98,7 +98,8 @@
 
 
 
-
+		//according to the research and debugging I've done, dojo.require is not a statement so this does not work, but I've included
+		//the rest of the code hoping that it would work.
 	  dojo.require("esri.dijit.Geocoder"),function Geocoder(){
 	  var Geocoder = new esri.dijit.Geocoder({ 
 		arcgisGeocoder: { 
@@ -107,7 +108,7 @@
 	    autoComplete: true,
         map: map,    
       },dojo.byId("search"));
-		 
+		 //the above creates a Geocoder 
 		};
 	
 	dojo.connect(Geocoder, "onSelect", function(result){ 
@@ -122,11 +123,11 @@
 		map.infoWindow.setTitle("Search Result"); 
 		map.infoWindow.setContent(result.name);
 		map.infoWindow.show(result.feature.geometry); 
-	});
+	});//adds a point on the map when a location is selected
 	
 	var html = "<div id='spotlight' class='spotlight'></div>" 
 	dojo.place(html, dojo.byId("map_container"), "first");
-	
+	//begins the spotlight effect
 	var spotlight = dojo.connect(map, 'onExtentChange', function(){ 
 		var geom = esri.geometry.toScreenGeometry(map.extent, 
 			map.width, map.height, result.extent); 
@@ -157,7 +158,7 @@
 			dojo.disconnect(spotlight); 
 		});
 	
-	
+	//removes the spotlight effect
 	function removeSpotlight(){ 
 		dojo.query('.spotlight').removeClass('spotlight-active'); 
 		map.graphics.clear(); 
