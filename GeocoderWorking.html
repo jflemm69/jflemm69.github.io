@@ -6,7 +6,7 @@
     <title></title>
     <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/css/esri.css">
     <style>
-      html, body, #map {
+      html, body, #map, #viewDiv {
         height: 100%;
         width: 100%;
         margin: 0;
@@ -40,7 +40,8 @@
     </style>
 
     <script src="https://js.arcgis.com/3.27/"></script>
-    <script>
+    <script>	
+	
       require([
         "esri/map",
         "esri/dijit/Geocoder",
@@ -55,9 +56,9 @@
       ], function(Map, Geocoder, Graphic, SimpleMarkerSymbol, screenUtils, dom, domConstruct, query, Color) {
         // create a map and instance of the geocoder widget here
         var map = new Map("map", {
-          basemap: "topo",
-          center: [ -100, 40 ],
-          zoom: 10
+          basemap: "topo-vector",
+          center: [-118.71511,34.09042],
+          zoom: 11
         });
         var geocoder =  new Geocoder({
           arcgisGeocoder: {
